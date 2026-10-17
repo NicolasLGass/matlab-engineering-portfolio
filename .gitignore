@@ -1,0 +1,56 @@
+# ============================================================
+# .gitignore — NicolasGass-MATLAB-Portfolio
+# ============================================================
+
+# --- MATLAB automatic backup files ---
+*.asv
+
+# --- MATLAB binary data files (large, not part of code) ---
+*.mat
+*.fig
+
+# --- MATLAB compiled extensions ---
+*.mex*
+*.mexw64
+*.mexmaci64
+*.mexa64
+
+# --- Audio/measurement data files ---
+*.wav
+*.mp3
+*.flac
+
+# --- Large data files ---
+*.txt
+*.csv
+# ...except the small AMESim reference used by the validation script
+!01_nonlinear-newmark-method/validation/data/*.csv
+*.dat
+*.tdms
+
+# --- MATLAB exported figures ---
+output_figures/
+*.eps
+*.emf
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Windows shortcut files ---
+*.lnk
+
+# --- AMESim project files (external validation data) ---
+*.ame
+*.lp
+*.lam
+*.ldf
+
+# --- Temporary and local config ---
+*.tmp
+localconfig.m
+
+# ============================================================
+# NOTE: .m source files ARE tracked (that is the entire point)
+# ============================================================
