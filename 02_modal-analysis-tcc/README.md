@@ -120,6 +120,9 @@ Figures from the thesis (plot labels in Portuguese).
 ![FRF waterfall](figures/frf_waterfall_3d.png)
 *Waterfall of the measured FRFs (accelerometer at point 1, impact at points 1–10).*
 
+![FRF matrix](figures/frf_matrix_10x10.png)
+*Full 10 × 10 FRF matrix in dB (rows: impact point, columns: accelerometer point, 0–1000 Hz) — the grid view produced by `utils/mag_phase_plotter.m`.*
+
 ![CMIF](figures/cmif.png)
 *CMIF of the full FRF matrix — each peak indicates a structural mode (first mode at ≈ 56.6 Hz).*
 

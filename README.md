@@ -42,6 +42,7 @@ Implementation of the nonlinear predictor-corrector Newmark scheme with Newton-R
 
 - Dissertation (impact-pair model, $\Delta t = 0.001$ s): mean displacement error **0.107 %**, acceleration error **1.51 %**.
 - Reproducible benchmark in [`validation/`](01_nonlinear-newmark-method/validation/) (cubic spring, harmonic load): peak displacement error **≤ 0.034 %**.
+- Geometrically nonlinear elastic pendulum (Géradin & Rixen, 2014): matches the book and shows **second-order convergence** against a high-accuracy reference.
 
 ![Nonlinear Newmark vs AMESim](01_nonlinear-newmark-method/figures/validation_amesim.png)
 
@@ -95,7 +96,7 @@ matlab-engineering-portfolio/
 │   ├── core/          ← Solvers (Newmark NL, Newmark Linear, RK4)
 │   ├── models/        ← System parameters, force generators, state-space
 │   ├── examples/      ← Self-contained runnable example
-│   ├── validation/    ← Reproducible comparison against Simcenter AMESim
+│   ├── validation/    ← AMESim comparison + elastic pendulum benchmark
 │   └── figures/       ← Result figures shown in the README (one folder per project)
 │
 ├── 02_modal-analysis-tcc/
@@ -193,7 +194,7 @@ octave --eval "run('main_impact_pair.m'); input('Press Enter to close');"
 | Optimization | Gradient descent, Quasi-Newton (DFP), Penalty, Barrier, Augmented Lagrangian, Simplex |
 | Signal processing | H1 FRF estimator, coherence, Welch, CMIF/SVD |
 | Rotordynamics | Shaft-disk ODE, FE shaft model, hydrodynamic bearing theory, Campbell diagram |
-| Validation | Simcenter AMESim (Project 01), MATLAB `lsim` / `ode45` |
+| Validation | Simcenter AMESim and Géradin & Rixen benchmark (Project 01), MATLAB `lsim` / `ode45` |
 
 ---
 
