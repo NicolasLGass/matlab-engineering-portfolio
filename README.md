@@ -4,6 +4,7 @@
 ![GNU Octave](https://img.shields.io/badge/GNU%20Octave-11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Projects](https://img.shields.io/badge/projects-7-informational)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23441401.svg)](https://doi.org/10.5281/zenodo.23441401)
 
 **MSc in Mechanical Engineering — UNICAMP (2025)**  
 **BSc in Acoustical Engineering — UFSM (2020)**
@@ -203,7 +204,9 @@ octave --eval "run('main_impact_pair.m'); input('Press Enter to close');"
 
 If this code is useful in your work, please cite it (metadata in [`CITATION.cff`](CITATION.cff); GitHub's **"Cite this repository"** button exports APA and BibTeX):
 
-> Gass, N. L. (2026). *MATLAB Engineering Portfolio: structural dynamics, modal analysis, rotordynamics and numerical methods* (Version 1.0.0) [Computer software]. https://github.com/nicolasbombaja-del/matlab-engineering-portfolio
+> Gass, N. L. (2026). *MATLAB Engineering Portfolio: structural dynamics, modal analysis, rotordynamics and numerical methods* [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23441401
+
+The DOI above always resolves to the latest release; version 1.0.0 is archived as [10.5281/zenodo.23441402](https://doi.org/10.5281/zenodo.23441402).
 
 ---
 

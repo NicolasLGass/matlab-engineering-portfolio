@@ -18,6 +18,14 @@ authors:
     affiliation: Universidade Estadual de Campinas (UNICAMP)
 repository-code: "https://github.com/nicolasbombaja-del/matlab-engineering-portfolio"
 license: MIT
+doi: 10.5281/zenodo.23441401
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23441401
+    description: Concept DOI (all versions, resolves to the latest)
+  - type: doi
+    value: 10.5281/zenodo.23441402
+    description: Version 1.0.0
 version: 1.0.0
 date-released: "2026-10-17"
 keywords:
