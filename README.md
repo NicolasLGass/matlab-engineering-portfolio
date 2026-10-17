@@ -162,6 +162,19 @@ matlab-engineering-portfolio/
 
 The code targets **MATLAB R2019b+** and was also run end-to-end in **GNU Octave 11.3**. MATLAB-only plot calls have portable fallbacks (`plotyy` instead of `yyaxis`, plain lines instead of `xline`/`yline`, `imagesc` when `bar3` is missing, `sgtitle`/`datatip` only when available).
 
+**How to run a script:** the `matlab` code blocks in the project READMEs are typed in the **MATLAB or Octave Command Window** (not in a system terminal). Set the current folder to the script's folder and run it, e.g.
+
+```matlab
+cd 01_nonlinear-newmark-method/examples
+run main_impact_pair.m
+```
+
+From a system terminal, GNU Octave can run a script directly (figures stay open until you press Enter):
+
+```bash
+octave --eval "run('main_impact_pair.m'); input('Press Enter to close');"
+```
+
 | In Octave you need | For |
 |---|---|
 | `pkg load symbolic` (+ Python with SymPy) | `04/T3_v2.m`, `06/T1_F.m`, `07/Lista1Exe1.m` — loaded automatically by the scripts |
