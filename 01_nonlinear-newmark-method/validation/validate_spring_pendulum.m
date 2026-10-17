@@ -45,15 +45,15 @@ K = @(u,v) [k*(L(u,v)-L0)*1/L(u,v)  0;
             0  k*(L(u,v)-L0)*1/L(u,v)];
 
 % Tangent stiffness dP/du
-Kt = @(u,v) [k*(1- L0/L(u,v)) + k*(L0*u^2)/(L(u,v))^3   k*((L0*u*v)/(L(u,v)^3));
-             k*((L0*u*v)/(L(u,v)^3))   k*(1- L0/L(u,v)) + k*(L0*v^2)/(L(u,v))^3];
+Kt= @(u,v)  [( k*(1- L0/L(u,v))+ (L0*u^2)/(L(u,v))^3 )  ( k*((L0*u*v)/(L(u,v)^3)) );
+             k*((L0*u*v)/(L(u,v)^3))   k*(1- L0/L(u,v)) + (L0*v^2)/(L(u,v))^3];
 
 u0 = 0; v0 = 1.5;
 u0p = 0; v0p = 0;
 
 gamma = .5; beta = 1/4;
 
-tf = 20;                          % Integration time
+tf = 30;                          % Integration time (book trajectory plot ~30 s)
 
 % Reference solution (ode45, tight tolerances)
 odefun = @(tt, z) [z(3:4); M\([-M(1,1)*g; 0] - K(z(1),z(2))*z(1:2))];
@@ -170,7 +170,7 @@ xlabel('Time [s]');
 ylabel('Displacement [m]');
 legend('x (vertical)','y (horizontal)');
 title('Nonlinear pendulum - displacement (\Deltat = 0.03 s)');
-ylim([-2 3])
+xlim([0 20]); ylim([-2 3])      % same window as the book
 
 figure(2);
 plot(t,-up(1,:)); hold on; grid on;
@@ -179,15 +179,16 @@ xlabel('Time [s]');
 ylabel('Velocity [m/s]');
 legend('dx/dt','dy/dt');
 title('Nonlinear pendulum - velocity (\Deltat = 0.03 s)');
+xlim([0 20])
 
 figure(3);
 plot(u(2,:),u(1,:)); hold on; grid on;
 plot(0, 0, 'ko', 'MarkerFaceColor', 'k');
-axis equal;
+xlim([-2 2]); ylim([-2.5 0.5])   % same axes as the book
 xlabel('y [m]');
 ylabel('-x [m]');
 legend('Trajectory', 'Pivot');
-title('Nonlinear pendulum - trajectory');
+title(sprintf('Nonlinear pendulum - trajectory (0-%g s)', tf));
 
 figure(4);
 plot(-u(1,:),-up(1,:)); hold on; grid on;

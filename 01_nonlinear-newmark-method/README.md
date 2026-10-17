@@ -146,16 +146,16 @@ $$K_t = k\left[\left(1-\frac{\ell_0}{\ell}\right)I + \frac{\ell_0}{\ell^3}\,\mat
 |---|---|
 | $m$, $k$, $g$, $\ell_0$ | 1 kg, 30 N/m, 10 m/s², 1 m |
 | Initial conditions | $x(0) = 0$, $y(0) = 1.5$ m, $\dot{x}(0) = \dot{y}(0) = 0$ |
-| Newmark | $\gamma = 1/2$, $\beta = 1/4$, $h = 0.03$ s, 20 s |
+| Newmark | $\gamma = 1/2$, $\beta = 1/4$, $h = 0.03$ s, 30 s |
 | Convergence | $\lVert r \rVert < mg \cdot 10^{-5}$ |
 
 ![spring pendulum displacement](figures/spring_pendulum_displacement.png)
-*Displacements with the book settings ($h = 0.03$ s).*
+*Displacements with the book settings ($h = 0.03$ s), shown over 0–20 s as in the book.*
 
 ![spring pendulum trajectory](figures/spring_pendulum_trajectory.png)
-*Trajectory of the mass (pivot at the origin).*
+*Trajectory of the mass over 0–30 s (pivot at the origin), the time span that reproduces the book's trajectory figure.*
 
-**Comparison with the book.** The displacement and velocity histories match, visually, the figures published by Géradin & Rixen for the same data (the book gives plots only, no numerical values, and its figures are not reproduced here for copyright reasons).
+**Comparison with the book.** The displacement and velocity histories match, visually, the figures published by Géradin & Rixen for the same data, curve by curve over 0–20 s. The book does not state the time span of its trajectory plot; with 30 s the trajectory reproduces it, including the end point and the narrow loops near the pivot. (The book gives plots only, no numerical values, and its figures are not reproduced here for copyright reasons.)
 
 **Quantitative check.** Since the book has no numbers to compare against, the script also compares the solution with a high-accuracy reference (`ode45`, RelTol 1e-10) and repeats it with smaller steps:
 
@@ -164,18 +164,18 @@ $$K_t = k\left[\left(1-\frac{\ell_0}{\ell}\right)I + \frac{\ell_0}{\ell^3}\,\mat
 
 | $\Delta t$ [s] | Max. error, 0–5 s [m] | Error > 0.1 m after | Max. energy drift | Newton it./step |
 |---|---|---|---|---|
-| 0.030 (book) | 2.3 × 10⁻² | 8.2 s | 1.16 % | 2.2 |
-| 0.010 | 2.5 × 10⁻³ | 13.0 s | 0.13 % | 2.0 |
-| 0.003 | 2.2 × 10⁻⁴ | 19.8 s | 0.012 % | 2.0 |
-| 0.001 | 2.5 × 10⁻⁵ | — | 0.001 % | 2.0 |
+| 0.030 (book) | 2.3 × 10⁻² | 8.2 s | 1.17 % | 3.7 |
+| 0.010 | 2.5 × 10⁻³ | 13.0 s | 0.13 % | 3.0 |
+| 0.003 | 2.2 × 10⁻⁴ | 19.8 s | 0.012 % | 3.0 |
+| 0.001 | 2.5 × 10⁻⁵ | 20.9 s | 0.001 % | 2.2 |
 
 ![spring pendulum convergence](figures/spring_pendulum_convergence.png)
 *Error vs. time step: observed order 2.01, the theoretical order of the trapezoidal rule.*
 
 - **Second-order convergence.** Each 3× reduction of $\Delta t$ divides the error by about 9 (observed order 2.01).
-- **Conservative scheme.** With $\gamma = 1/2$ there is no numerical damping: total energy stays within 1.2 % at the book's step and within 0.001 % at $\Delta t = 1$ ms.
-- **Fast Newton convergence.** About 2 iterations per step, as expected for a consistent tangent matrix.
-- **Long-time divergence is physical, not numerical.** The swing–stretch coupling makes the motion very sensitive to small phase errors, so any two solutions (even two reference solvers) drift apart after some seconds. A smaller $\Delta t$ only delays that point (8 s → 13 s → 20 s).
+- **Conservative scheme.** With $\gamma = 1/2$ there is no numerical damping: total energy stays within 1.2 % over 30 s at the book's step and within 0.001 % at $\Delta t = 1$ ms.
+- **Fast Newton convergence.** 2–4 iterations per step to reach $\lVert r \rVert < mg \cdot 10^{-5}$.
+- **Long-time divergence is physical, not numerical.** The swing–stretch coupling makes the motion very sensitive to small phase errors, so any two solutions (even two reference solvers) drift apart after some seconds. A smaller $\Delta t$ only delays that point (8 s → 13 s → 20 s → 21 s).
 
 ```matlab
 cd validation
