@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MATLAB Engineering Portfolio: structural dynamics, modal analysis, rotordynamics and numerical methods"
+abstract: >-
+  MATLAB / GNU Octave routines developed during a BSc in Acoustical
+  Engineering (UFSM) and an MSc in Mechanical Engineering (UNICAMP):
+  nonlinear Newmark time integration with Newton-Raphson iterations,
+  validated against Simcenter AMESim and the Géradin & Rixen elastic
+  pendulum benchmark; experimental modal analysis of an electric guitar
+  (H1 FRF, CMIF, MAC); damping identification; rotordynamics with
+  hydrodynamic bearings; vibration isolation; FEM time integration and
+  numerical optimization.
+authors:
+  - given-names: Nícolas Londero
+    family-names: Gass
+    email: nicolas.gass@eac.ufsm.br
+    affiliation: Universidade Estadual de Campinas (UNICAMP)
+repository-code: "https://github.com/nicolasbombaja-del/matlab-engineering-portfolio"
+license: MIT
+version: 1.0.0
+date-released: "2026-10-17"
+keywords:
+  - MATLAB
+  - GNU Octave
+  - structural dynamics
+  - nonlinear dynamics
+  - Newmark method
+  - modal analysis
+  - rotordynamics
+  - time integration
+  - optimization
+  - NVH

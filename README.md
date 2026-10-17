@@ -1,4 +1,4 @@
-# MATLAB Engineering Portfolio — Nicolás Londero Gass
+# MATLAB Engineering Portfolio — Nícolas Londero Gass
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2019b%2B-orange)
 ![GNU Octave](https://img.shields.io/badge/GNU%20Octave-11-blue)
@@ -89,6 +89,7 @@ matlab-engineering-portfolio/
 │
 ├── README.md
 ├── LICENSE
+├── CITATION.cff
 ├── .gitignore
 │
 ├── 01_nonlinear-newmark-method/
@@ -195,6 +196,14 @@ octave --eval "run('main_impact_pair.m'); input('Press Enter to close');"
 | Signal processing | H1 FRF estimator, coherence, Welch, CMIF/SVD |
 | Rotordynamics | Shaft-disk ODE, FE shaft model, hydrodynamic bearing theory, Campbell diagram |
 | Validation | Simcenter AMESim and Géradin & Rixen benchmark (Project 01), MATLAB `lsim` / `ode45` |
+
+---
+
+## How to Cite
+
+If this code is useful in your work, please cite it (metadata in [`CITATION.cff`](CITATION.cff); GitHub's **"Cite this repository"** button exports APA and BibTeX):
+
+> Gass, N. L. (2026). *MATLAB Engineering Portfolio: structural dynamics, modal analysis, rotordynamics and numerical methods* (Version 1.0.0) [Computer software]. https://github.com/nicolasbombaja-del/matlab-engineering-portfolio
 
 ---
 
