@@ -1,4 +1,4 @@
-# 09 — Optimization Methods (Métodos de Otimização de Sistemas)
+# Optimization Methods (Métodos de Otimização de Sistemas)
 
 Modular library of unconstrained and constrained optimization methods implemented in MATLAB, developed for the graduate course *Métodos de Otimização de Sistemas* at UNICAMP.
 

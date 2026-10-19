@@ -1,4 +1,4 @@
-# 07 — Rotordynamics (Análise de Máquinas Rotativas)
+# Rotordynamics (Análise de Máquinas Rotativas)
 
 Numerical simulation of rotating machinery dynamics, including shaft-disk systems with hydrodynamic bearings, unbalance response, and finite element shaft modeling.
 

@@ -1,4 +1,4 @@
-# 08 — FEM Time Integration Methods (Elementos Finitos 3)
+# FEM Time Integration Methods (Elementos Finitos 3)
 
 Implementation and stability analysis of direct time-integration methods for structural dynamics, including central differences, Houbolt, Newmark, and Wilson-θ. Also includes FEM formulation for triangular elements and truss buckling.
 
